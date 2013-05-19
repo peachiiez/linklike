@@ -12,4 +12,24 @@ class LinkController {
         link.save()
         redirect(action: "index")
     }
+    
+    def addvote(String title){
+    	def links = Link.findAll()
+    	for (l in links){
+    		if(l.title==title){
+    			l.votecnt+=1
+    			break
+    		}
+    	}
+    }
+
+    def unvote(String title){
+    	def links = Link.findAll()
+    	for (l in links){
+    		if(l.title==title){
+    			l.votecnt-=1
+    			break
+    		}
+    	}
+    }
 }

@@ -13,7 +13,7 @@
     <li>No links</li>
   <% } else { %>
     <% for(link in links) { %>
-      <li><%= link.title %></li>
+      <li><a href="//<%= link.url %>" target="_blank"><%= link.title %></a> <%= link.votecnt %> vote(s)</li>
     <% } %> 
   <% } %>
 </ul>
